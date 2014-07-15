@@ -50,3 +50,5 @@ alias e="nocorrect emacs -nw"
 alias rm="rm -v"
 alias mv="mv -v"
 alias cp="cp -v"
+
+eval "$(direnv hook zsh)"
