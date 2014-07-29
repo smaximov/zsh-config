@@ -1,3 +1,5 @@
+# -*- mode: sh; -*-
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -50,5 +52,11 @@ alias e="nocorrect emacsclient -t -a ''"
 alias rm="rm -v"
 alias mv="mv -v"
 alias cp="cp -v"
+alias kill-emacs="emacsclient -t -e '(kill-emacs)'"
+
+# Global aliases
+alias -g L='| less'
+alias -g X='| xclip -i'
+alias -g G='| grep -P'
 
 eval "$(direnv hook zsh)"
