@@ -46,7 +46,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 alias bower="noglob bower"
-alias e="nocorrect emacs -nw"
+alias e="nocorrect emacsclient -t -a ''"
 alias rm="rm -v"
 alias mv="mv -v"
 alias cp="cp -v"
