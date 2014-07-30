@@ -1,3 +1,4 @@
+# -*- mode: sh; -*-
 PATH=$PATH:$HOME/bin:$HOME/opt/bin:/opt:$HOME/racket/bin:$HOME/google_appengine:$HOME/sbt/bin:$HOME/eclipse
 
 export PATH=$PATH:$HOME/.cabal/bin
