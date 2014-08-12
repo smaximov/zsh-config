@@ -3,7 +3,7 @@ PATH=$PATH:$HOME/bin:$HOME/opt/bin:/opt:$HOME/racket/bin:$HOME/google_appengine:
 
 export PATH=$PATH:$HOME/.cabal/bin
 
-export EDITOR='emacs -nw'
+export EDITOR='emacsclient -t -a ""'
 export PAGER='less -M'
 export VISUAL=$EDITOR
 
