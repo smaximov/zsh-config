@@ -55,6 +55,8 @@ alias cp="cp -v"
 alias kill-emacs="emacsclient -t -e '(kill-emacs)'"
 alias sdcv="sdcv --color"
 
+alias e-last="/usr/local/bin/emacs"
+
 # Global aliases
 alias -g L='| less'
 alias -g X='| xclip -i'
