@@ -1,8 +1,4 @@
 # -*- mode: sh; -*-
-PATH=$PATH:$HOME/bin:$HOME/opt/bin:/opt:$HOME/racket/bin:$HOME/google_appengine:$HOME/sbt/bin:$HOME/eclipse
-
-export PATH=$HOME/.cabal/bin:$PATH
-export PATH=/opt/ghc/head/bin:$PATH
 
 export EDITOR='emacsclient -t -a ""'
 export PAGER='less -M'
@@ -13,11 +9,16 @@ export LC_ALL="ru_RU.UTF-8"
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
-export PATH="$HOME/.cask/bin:$PATH"
+# Emacs Cask integration
+path+=($HOME/.cask/bin)
 
-export ANDROID_HOME="$HOME/android/sdk"
-export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/build-tools:$ANDROID_HOME/platform-tools:$PATH"
+# Haskell Cabal & Stack integration
+path+=($HOME/.local/bin $HOME/.cabal/bin)
 
-export PATH=$HOME/.local/bin:$PATH
+# Rust Cargo integration
+path+=($HOME/.cargo/bin)
 
-export PATH=$HOME/.cargo/bin:$PATH
+# $HOME, sweet $HOME
+path+=($HOME/bin)
+
+export PATH
