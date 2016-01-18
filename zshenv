@@ -19,7 +19,7 @@ path+=($HOME/.local/bin $HOME/.cabal/bin)
 path+=($HOME/.cargo/bin)
 
 # Rust sources for Racer
-export RUST_SRC_PATH=$HOME/src/rust
+export RUST_SRC_PATH=$HOME/src/rust/src
 
 # $HOME, sweet $HOME
 path+=($HOME/bin)
