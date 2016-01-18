@@ -18,6 +18,9 @@ path+=($HOME/.local/bin $HOME/.cabal/bin)
 # Rust Cargo integration
 path+=($HOME/.cargo/bin)
 
+# Rust sources for Racer
+export RUST_SRC_PATH=$HOME/src/rust
+
 # $HOME, sweet $HOME
 path+=($HOME/bin)
 
