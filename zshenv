@@ -25,3 +25,6 @@ export RUST_SRC_PATH=$HOME/src/rust/src
 path+=($HOME/bin)
 
 export PATH
+
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
