@@ -6,6 +6,9 @@ ZSH_THEME="norm"
 # Plugins
 plugins=(git extract ruby rails cake bundler coffee npm pip scala)
 
+# Create ZSH cache directory unless it already exists
+[[ -d $ZSH_CACHE_DIR ]] || mkdir -p $ZSH_CACHE_DIR
+
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
