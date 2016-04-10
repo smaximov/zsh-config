@@ -59,5 +59,3 @@ alias sdcv="sdcv --color"
 alias -g L='| less'
 alias -g X='| xclip -i'
 alias -g G='| grep -P'
-
-eval "$(direnv hook zsh)"
