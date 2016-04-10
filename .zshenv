@@ -31,6 +31,7 @@ export XDG_CACHE_HOME=$HOME/.cache
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
 
 export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
+export HISTFILE=$ZSH_CACHE_DIR/zhistory
 
 # Store ZSH files under XDG_CONFIG_HOME base directory.
 # This works by symlinking ~/.zshenv to ~/.config/zsh/.zshenv (this file).
