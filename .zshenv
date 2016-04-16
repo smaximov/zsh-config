@@ -1,6 +1,7 @@
 # -*- mode: sh; -*-
 
-export EDITOR='emacsclient -t -a ""'
+export ALTERNATE_EDITOR=''
+export EDITOR='emacsclient -t'
 export PAGER='less -M'
 export VISUAL=$EDITOR
 
