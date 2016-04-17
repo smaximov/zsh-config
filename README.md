@@ -28,7 +28,7 @@ Run the following script (it will prompt for sudo password):
 $ curl -sSf https://raw.githubusercontent.com/smaximov/zsh-config/master/tools/install.sh | sh
 ```
 
-...or install manually (**Note**: precise locations matters!):
+...or install manually (**Note**: precise locations matter!):
 
 ``` bash
 # Clone this repository
