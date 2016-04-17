@@ -23,7 +23,7 @@ main() {
 
     echo "installing Oh My Zsh..."
     ensure mkdir -p "$ZSH"
-    ensure git clone --depth "$OH_MY_ZSH_REPO" "$ZSH"
+    ensure git clone --depth=1 "$OH_MY_ZSH_REPO" "$ZSH"
 
     echo "installing zsh config..."
     ensure mkdir -p "$ZDOTDIR"
