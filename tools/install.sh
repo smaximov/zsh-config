@@ -51,7 +51,7 @@ need() {
 
 ensure() {
     "$@"
-    if [ $? != 0]; then
+    if [ $? != 0 ]; then
         die "command failed: $*"
     fi
 }
