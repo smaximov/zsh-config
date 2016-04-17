@@ -13,7 +13,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 alias bower="noglob bower"
-alias e="nocorrect emacsclient -t -a ''"
+alias e="nocorrect emacsclient -t"
 alias rm="rm -v"
 alias mv="mv -v"
 alias cp="cp -v"
