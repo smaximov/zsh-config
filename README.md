@@ -2,7 +2,7 @@ My ZSH configuration based on [Oh My Zsh](http://ohmyz.sh/).
 
 # Getting started
 
-Run following script (it will prompt for your password once):
+Run the following script (it will prompt for sudo password):
 
 ``` bash
 $ curl -sSf https://raw.githubusercontent.com/smaximov/zsh-config/master/tools/install.sh | sh
