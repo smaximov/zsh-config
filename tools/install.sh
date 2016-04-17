@@ -9,7 +9,7 @@ ZDOTDIR=$XDG_CONFIG_HOME/zsh
 ZSH=$XDG_DATA_HOME/oh-my-zsh
 
 OH_MY_ZSH_REPO="https://github.com/robbyrussell/oh-my-zsh.git"
-ZSH_CONFIG_REPO="https://github.com/smaximov/zsh-config/blob/master/.zshenv"
+ZSH_CONFIG_REPO="https://github.com/smaximov/zsh-config.git"
 
 main() {
     need git
