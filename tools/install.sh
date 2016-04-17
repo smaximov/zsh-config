@@ -33,7 +33,8 @@ main() {
     ensure ln -fs $(readlink -e "$ZDOTDIR/.zshenv") "$HOME/.zshenv"
 
     echo "changing your default shell to zsh..."
-    ensure chsh -s $(grep "zsh$" /etc/shells | tail -1)
+    me=$USER
+    ensure sudo chsh -s $(grep "zsh$" /etc/shells | tail -1) "$me"
 
     echo "zsh config installed! now login to zsh"
 }
