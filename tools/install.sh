@@ -30,7 +30,7 @@ main() {
     ensure git clone "$ZSH_CONFIG_REPO" "$ZDOTDIR"
 
     echo "creating symlink from '$HOME/.zshenv' to '$ZDOTDIR/.zshenv'..."
-    ensure ln -s $(readlink -e "$ZDOTDIR/.zshenv") "$HOME/.zshenv"
+    ensure ln -fs $(readlink -e "$ZDOTDIR/.zshenv") "$HOME/.zshenv"
 
     echo "changing your default shell to zsh..."
     # ensure chsh -s $(grep "zsh$" /etc/shells | tail -1)
