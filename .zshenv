@@ -22,11 +22,14 @@ export CARGO_HOME=$XDG_CACHE_HOME/cargo
 export RUSTUP_HOME=$XDG_CACHE_HOME/rustup
 path+=($CARGO_HOME/bin)
 
-# Node
-path+=($HOME/node/bin)
+# New fancy error output format for rust-nightly
+export RUST_NEW_ERROR_FORMAT=true
 
 # Rust sources for Racer
 export RUST_SRC_PATH=$HOME/src/rust/src
+
+# Node
+path+=($HOME/node/bin)
 
 # $HOME, sweet $HOME
 path+=($HOME/bin)
