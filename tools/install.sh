@@ -34,7 +34,7 @@ main() {
 
     echo "changing your default shell to zsh..."
     me=$USER
-    ensure sudo chsh -s $(grep "zsh$" /etc/shells | tail -1) "$me"
+    ensure as_root chsh -s $(grep "zsh$" /etc/shells | tail -1) "$me"
 
     echo "zsh config installed! now login to zsh"
 }
@@ -47,6 +47,14 @@ die() {
 need() {
     if ! command -v "$1" > /dev/null 2>&1; then
         die "need '$1' (command not found)"
+    fi
+}
+
+as_root() {
+    if [[ $EUID -ne 0 ]]; then
+        sudo "$@"               # need sudo
+    else
+        "$@"                    # root
     fi
 }
 
