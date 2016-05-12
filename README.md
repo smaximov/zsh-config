@@ -1,4 +1,8 @@
-My ZSH configuration utilizing [Oh My Zsh](http://ohmyz.sh/). It's based on (and tries to enforce) the
+My ZSH configuration utilizing [Oh My Zsh](http://ohmyz.sh/).
+
+# Getting started
+
+The configuration is based on (and tries to enforce) the
 following assumptions.
 
 * `XDG_*` variables are set according to [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html):
@@ -14,7 +18,7 @@ following assumptions.
 * Oh My Zsh files located under `$ZSH`;
 * `~/.zshenv` is a symbolic link pointing to `$ZDOTDIR/.zshenv`.
 
-# Getting started
+## Installation
 
 Run the following script (it will prompt for sudo password):
 
@@ -39,6 +43,6 @@ Finally, you can change your shell:
 $ sudo chsh -s /usr/bin/zsh $USER
 ```
 
-# Updating
+## Updating
 
 To update the configuration, run `update-zsh-config`.
