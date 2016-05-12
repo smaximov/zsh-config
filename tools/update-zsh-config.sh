@@ -4,7 +4,7 @@ set -u
 
 usage() {
     cat <<EOF
-Usage: update_zsh_config [-h|--help] [--o|--oh-my-zsh]
+Usage: update-zsh-config [-h|--help] [--o|--oh-my-zsh]
 Update ZSH config.
 
 Options:
@@ -22,7 +22,7 @@ ensure() {
     "$@" || die "command failed: $*"
 }
 
-update_zsh_config() {
+update-zsh-config() {
     ensure cd $ZDOTDIR
     ensure git pull origin master
     if [[ "$1" = 1 ]]; then
@@ -48,4 +48,4 @@ while (( $# > 0 )); do
     shift
 done
 
-update_zsh_config $update_omz
+update-zsh-config $update_omz
