@@ -38,3 +38,7 @@ Finally, you can change your shell:
 ``` bash
 $ sudo chsh -s /usr/bin/zsh $USER
 ```
+
+# Updating
+
+To update the configuration, run `update-zsh-config`.
