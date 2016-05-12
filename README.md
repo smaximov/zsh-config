@@ -5,7 +5,8 @@ My ZSH configuration utilizing [Oh My Zsh](http://ohmyz.sh/).
 The configuration is based on (and tries to enforce) the
 following assumptions.
 
-* `XDG_*` variables are set according to [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html):
+* `XDG_*` variables are set according to
+  [XDG Base Directory Specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html):
   + `XDG_CONFIG_HOME`: `~/.config`
   + `XDG_DATA_HOME`: `~/.local/share`
   + `XDG_CACHE_HOME`: `~/.cache`
@@ -13,9 +14,8 @@ following assumptions.
   + `ZDOTDIR`: `$XDG_CONFIG_HOME/zsh`
   + `ZSH`: `$XDG_DATA_HOME/oh-my-zsh`
   + `ZSH_CACHE_DIR`: `$XDG_CACHE_HOME/zsh`
-
 * ZSH config files located under `$ZDOTDIR`.
-* Oh My Zsh files located under `$ZSH`;
+* Oh My Zsh files located under `$ZSH`.
 * `~/.zshenv` is a symbolic link pointing to `$ZDOTDIR/.zshenv`.
 
 ## Installation
