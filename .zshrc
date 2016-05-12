@@ -24,3 +24,7 @@ alias sdcv="sdcv --color"
 alias -g L='| less'
 alias -g X='| xclip -i'
 alias -g G='| grep -P'
+
+update_zsh_config() {
+    env ZSH=$ZSH ZDOTDIR=$ZDOTDIR $ZDOTDIR/tools/update-zsh-config.sh "$@"
+}
