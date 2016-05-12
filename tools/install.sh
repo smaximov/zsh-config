@@ -36,7 +36,7 @@ main() {
     me=$USER
     ensure as_root chsh -s $(grep "zsh$" /etc/shells | tail -1) "$me"
 
-    echo "zsh config installed! now login to zsh"
+    echo "zsh config installed! you can now login to zsh"
 }
 
 die() {
