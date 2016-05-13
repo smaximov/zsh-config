@@ -32,7 +32,7 @@ main() {
     ensure git clone "$ZSH_CONFIG_REPO" "$ZDOTDIR"
 
     # ensure ZSH cache dir exists
-    [[ -d $ZSH_CACHE_DIR ]] || mkdir -p $ZSH_CACHE_DIR
+    [ -d $ZSH_CACHE_DIR ] || mkdir -p $ZSH_CACHE_DIR
     # set update marker
     touch $ZSH_CACHE_DIR/last-update
 
@@ -58,7 +58,7 @@ need() {
 }
 
 as_root() {
-    if [[ $EUID -ne 0 ]]; then
+    if [ $(id -u) -ne 0 ]; then
         sudo "$@"               # need sudo
     else
         "$@"                    # root
