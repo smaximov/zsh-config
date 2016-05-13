@@ -23,9 +23,15 @@ ensure() {
 }
 
 update-zsh-config() {
+    [[ -w "$ZDOTDIR" ]] || \
+        die "The user doesn't have write permissions for the ZSH config directory"
+
     ensure cd $ZDOTDIR
     ensure git pull origin master
     if [[ "$1" = 1 ]]; then
+        [[ -w "$ZSH" ]] || \
+            die "The user doesn't have write permissions for the Oh-My-ZSH directory"
+
         ensure env ZSH=$ZSH /bin/sh $ZSH/tools/upgrade.sh
     fi
 }
