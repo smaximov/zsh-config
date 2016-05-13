@@ -4,9 +4,11 @@ set -u
 
 XDG_CONFIG_HOME=$HOME/.config
 XDG_DATA_HOME=$HOME/.local/share
+XDG_CACHE_HOME=$HOME/.cache
 
 ZDOTDIR=$XDG_CONFIG_HOME/zsh
 ZSH=$XDG_DATA_HOME/oh-my-zsh
+ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
 
 OH_MY_ZSH_REPO="https://github.com/robbyrussell/oh-my-zsh.git"
 ZSH_CONFIG_REPO="https://github.com/smaximov/zsh-config.git"
@@ -28,6 +30,11 @@ main() {
     echo "installing zsh config..."
     ensure mkdir -p "$ZDOTDIR"
     ensure git clone "$ZSH_CONFIG_REPO" "$ZDOTDIR"
+
+    # ensure ZSH cache dir exists
+    [[ -d $ZSH_CACHE_DIR ]] || mkdir -p $ZSH_CACHE_DIR
+    # set update marker
+    touch $ZSH_CACHE_DIR/last-update
 
     echo "creating symlink from '$HOME/.zshenv' to '$ZDOTDIR/.zshenv'..."
     ensure ln -fs $(readlink -e "$ZDOTDIR/.zshenv") "$HOME/.zshenv"
