@@ -14,8 +14,16 @@ EOF
 }
 
 die() {
-    echo $1 >&2
+    printf "$fg_bold[red]%s${reset_color}\n" $1 >&2
     exit 1
+}
+
+info() {
+    printf "$fg[blue]%s${reset_color}\n" $1
+}
+
+success() {
+    printf "$fg_bold[green]%s${reset_color}\n" $1
 }
 
 ensure() {
@@ -23,7 +31,7 @@ ensure() {
 }
 
 update-zsh-config() {
-    echo "Running ZSH config update..."
+    info "Running ZSH config update..."
 
     [[ -w "$ZDOTDIR" ]] || \
         die "The user doesn't have write permissions for the ZSH config directory"
@@ -31,7 +39,7 @@ update-zsh-config() {
     ensure cd $ZDOTDIR
     ensure git pull origin master
 
-    echo "Latest commit:"
+    success "ZSH config has been updated. Latest commit:"
     git --no-pager log -1 --oneline
 
     if [[ -w "$ZSH_CACHE_DIR" ]]; then
@@ -46,22 +54,28 @@ update-zsh-config() {
     fi
 }
 
-update_omz=0
+main() {
+    autoload -Uz colors && colors
 
-while (( $# > 0 )); do
-    case $1 in
-        (-h|--help)
-            usage
-            exit 0
-            ;;
-        (-o|--oh-my-zsh)
-            update_omz=1
-            ;;
-        (*)
-            die "Unknown option: $1"
-            ;;
-    esac
-    shift
-done
+    local update_omz=0
 
-update-zsh-config $update_omz
+    while (( $# > 0 )); do
+        case $1 in
+            (-h|--help)
+                usage
+                exit 0
+                ;;
+            (-o|--oh-my-zsh)
+                update_omz=1
+                ;;
+            (*)
+                die "Unknown option: $1"
+                ;;
+        esac
+        shift
+    done
+
+    update-zsh-config $update_omz
+}
+
+main "$@" || exit 0

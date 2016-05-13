@@ -13,7 +13,7 @@ yes-no() {
 }
 
 update-zsh-config() {
-    $ZDOTDIR/tools/update-zsh-config.sh "$@"
+    env ZSH=$ZSH $ZDOTDIR/tools/update-zsh-config.sh "$@"
 }
 
 auto-update-enabled() {
