@@ -37,7 +37,7 @@ The following variables can be used to customize this configuration:
 
 # Installation
 
-Run the following script (it will prompt for sudo password):
+Run the following script (it will prompt for sudo password if necessary):
 
 ``` bash
 $ curl -sSf https://raw.githubusercontent.com/smaximov/zsh-config/master/tools/install.sh | sh
