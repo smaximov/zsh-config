@@ -31,6 +31,9 @@ The following variables can be used to customize this configuration:
 |----------|---------|-------------|
 | `UPDATE_INTERVAL_DAYS` | `7` | How often (in days) to check for updates? |
 | `DISABLE_AUTO_UPDATE` | _unset_ | Set this variable to some value to disable auto updating |
+| `ZSH_THEME` | `nameless` | An Oh-My-ZSH theme [themes][] |
+
+[themes]: https://github.com/robbyrussell/oh-my-zsh/tree/master/themes/
 
 # Installation
 
