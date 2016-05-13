@@ -31,7 +31,7 @@ update-zsh-config() {
     ensure cd $ZDOTDIR
     ensure git pull origin master
 
-    echo "Latest commit:"
+    echo -n "Latest commit:\n\t"
     git --no-pager log -1 --oneline
 
     if [[ -w "$ZSH_CACHE_DIR" ]]; then
