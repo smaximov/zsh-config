@@ -14,6 +14,23 @@ OH_MY_ZSH_REPO="https://github.com/robbyrussell/oh-my-zsh.git"
 ZSH_CONFIG_REPO="https://github.com/smaximov/zsh-config.git"
 
 main() {
+    if which tput >/dev/null 2>&1; then
+        ncolors=$(tput colors)
+    fi
+    if [ -t 1 ] && [ -n "$ncolors" ] && [ "$ncolors" -ge 8 ]; then
+        RED="$(tput setaf 1)"
+        GREEN="$(tput setaf 2)"
+        YELLOW="$(tput setaf 3)"
+        BOLD="$(tput bold)"
+        NORMAL="$(tput sgr0)"
+    else
+        RED=""
+        GREEN=""
+        YELLOW=""
+        BOLD=""
+        NORMAL=""
+    fi
+
     need git
     need zsh
     need mkdir
@@ -23,7 +40,7 @@ main() {
 
     ensure umask g-w,o-w
 
-    printf "installing Oh My Zsh...\n"
+    printf "${BOLD}${YELLOW}Installing Oh My Zsh...${NORMAL}\n"
     ensure mkdir -p "$ZSH"
     ensure git clone --depth=1 "$OH_MY_ZSH_REPO" "$ZSH"
 
@@ -43,13 +60,14 @@ main() {
     me=$USER
     ensure as_root chsh -s $(grep "zsh$" /etc/shells | tail -1) "$me"
 
-    printf "%s" "$fg_bold[green]"
+    printf "${BOLD}${GREEN}"
     printf 'ZSH config is successefully installed!\n'
-    printf "%s" "$reset_color"
+    printf "Type 'env zsh' to login to ZSH immediately\n"
+    printf "${NORMAL}"
 }
 
 die() {
-    printf "$fg_bold[red]ERROR${reset_color}: %s\n" $1 >&2
+    printf "${BOLD}${RED}ERROR${NORMAL}: %s\n" $1 >&2
     exit 1
 }
 
