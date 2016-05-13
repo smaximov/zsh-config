@@ -1,7 +1,10 @@
 # -*- mode: sh; -*-
 
 ZSH=$XDG_DATA_HOME/oh-my-zsh
-ZSH_THEME="norm"
+
+# Custom directory location
+ZSH_CUSTOM=$ZDOTDIR/custom
+ZSH_THEME="nameless"
 
 # Plugins
 plugins=(git extract ruby rails cake bundler coffee npm pip scala)
