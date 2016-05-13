@@ -52,7 +52,9 @@ main() {
         ensure git clone --depth=1 "$OH_MY_ZSH_REPO" "$ZSH"
     fi
 
-    info "installing zsh config..."
+    echo
+
+    info "Installing zsh config..."
 
 
     if git_repo "$ZDOTDIR"; then
@@ -67,13 +69,19 @@ main() {
     # set update marker
     touch $ZSH_CACHE_DIR/last-update
 
+    echo
+
     info "Creating symlink from '$HOME/.zshenv' to '$ZDOTDIR/.zshenv'..."
     ensure ln -fs $(readlink -e "$ZDOTDIR/.zshenv") "$HOME/.zshenv"
 
     if [ "$(shell)" != "zsh" ]; then
+        echo
+
         info 'Changing your default shell to zsh...'
         ensure as_root chsh -s $(grep "zsh$" /etc/shells | tail -1) "$USER"
     fi
+
+    echo
 
     success "ZSH config is successefully installed!"
     success "Type 'env zsh' to login to ZSH immediately"
