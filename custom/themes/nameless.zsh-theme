@@ -1,5 +1,5 @@
 ssh_connection() {
-  if [[ -n $SSH_CONNECTION ]]; then
+  if [[ -n $(who am i) ]]; then
     echo "%{$fg_bold[magenta]%}(ssh)%{$fg_no_bold[magenta]%} "
   fi
 }
