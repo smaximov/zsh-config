@@ -1,6 +1,6 @@
 yes-no() {
-    local yn="[$fg[green]Y${reset_color}/n]"
-    read -q "reply?${1} ${yn}: "
+    local yn="$fg[green]Y${reset_color}/n"
+    read -q "reply?$1 ${yn} "
     local ret=$?
 
     if [[ "$reply" == $'\n' ]]; then

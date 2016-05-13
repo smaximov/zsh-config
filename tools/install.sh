@@ -23,11 +23,11 @@ main() {
 
     ensure umask g-w,o-w
 
-    echo "installing Oh My Zsh..."
+    printf "installing Oh My Zsh...\n"
     ensure mkdir -p "$ZSH"
     ensure git clone --depth=1 "$OH_MY_ZSH_REPO" "$ZSH"
 
-    echo "installing zsh config..."
+    printf "installing zsh config...\n"
     ensure mkdir -p "$ZDOTDIR"
     ensure git clone "$ZSH_CONFIG_REPO" "$ZDOTDIR"
 
@@ -36,18 +36,20 @@ main() {
     # set update marker
     touch $ZSH_CACHE_DIR/last-update
 
-    echo "creating symlink from '$HOME/.zshenv' to '$ZDOTDIR/.zshenv'..."
+    printf "creating symlink from '$HOME/.zshenv' to '$ZDOTDIR/.zshenv'...\n"
     ensure ln -fs $(readlink -e "$ZDOTDIR/.zshenv") "$HOME/.zshenv"
 
-    echo "changing your default shell to zsh..."
+    printf 'changing your default shell to zsh...\n'
     me=$USER
     ensure as_root chsh -s $(grep "zsh$" /etc/shells | tail -1) "$me"
 
-    echo "zsh config installed! you can now login to zsh"
+    printf "%s" "$fg_bold[green]"
+    printf 'ZSH config is successefully installed!\n'
+    printf "%s" "$reset_color"
 }
 
 die() {
-    echo "$1" >&2
+    printf "$fg_bold[red]ERROR${reset_color}: %s\n" $1 >&2
     exit 1
 }
 
