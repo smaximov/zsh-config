@@ -4,7 +4,7 @@ ssh_connection() {
   fi
 }
 
-local user='%(!.%{fg_bold[yellow]%}.%{$fg[yellow]%})%n%{$fg_no_bold[yellow]%}'
+local user='%(!.%{$fg_bold[yellow]%}.%{$fg[yellow]%})%n%{$fg_no_bold[yellow]%}'
 local host='%{$fg[yellow]%}%m'
 local dir='%{$fg[green]%}%c'
 local location="$user%{$fg[cyan]%}@$host $dir"
