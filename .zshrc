@@ -28,8 +28,8 @@ alias -g G='| grep -P'
 # Custom enviroment variables
 [[ -f $ZDOTDIR/custom.env ]] && source $ZDOTDIR/custom.env
 
-yes-or-no() {
-    read -q "reply?${1} [Y/n] "
+yes-no() {
+    read -q "reply?${1} [Y/n]: "
     local ret=$?
 
     if [[ "$reply" == $'\n' ]]; then
@@ -61,10 +61,10 @@ time-to-update() {
 if auto-update-enabled; then
     if [[ -f $ZSH_CACHE_DIR/last-update ]]; then
         if time-to-update && \\
-           yes-or-no "ZSH config: last update was more than ${UPDATE_INTERVAL_DAYS} days ago; update now?"; then
+           yes-no "ZSH config: last update was more than ${UPDATE_INTERVAL_DAYS} days ago; update now?"; then
             update-zsh-config
         fi
-    elif yes-or-no "ZSH config: the time of the last update is unknown; update now?"; then
+    elif yes-no "ZSH config: the time of the last update is unknown; update now?"; then
         update-zsh-config
     fi
 fi
