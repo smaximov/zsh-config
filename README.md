@@ -1,3 +1,5 @@
+# My ZSH config
+
 My ZSH configuration utilizing [Oh My Zsh](http://ohmyz.sh/).
 
 # Getting started
@@ -61,6 +63,6 @@ ZSH will attempt to update the configuration after login every
 `$UPDATE_INTERVAL_DAYS` days (7 by default).
 You can override this variable in `$ZDOTDIR/custom.env`.
 Alternatively, you can disable auto-updating entirely by
-setting the `DISABLE_AUTO_UPDATE` variable (e.g., `DISABLE_AUTO_UPDATE=yes`).
+setting the `DISABLE_AUTO_UPDATE` variable to some value (e.g., `DISABLE_AUTO_UPDATE=yes`).
 
 To update the configuration manually, run `update-zsh-config`.
