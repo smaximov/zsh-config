@@ -20,45 +20,6 @@ plugins=(git extract ruby rails cake bundler coffee npm pip scala)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-alias bower="noglob bower"
-alias e="nocorrect emacsclient -t"
-alias rm="rm -v"
-alias mv="mv -v"
-alias cp="cp -v"
-alias kill-emacs="emacsclient -t -e '(kill-emacs)'"
-alias sdcv="sdcv --color"
-
-# Global aliases
-alias -g L='| less'
-alias -g X='| xclip -i'
-alias -g G='| grep -P'
-
-yes-no() {
-    read -q "reply?${1} [Y/n]: "
-    local ret=$?
-
-    if [[ "$reply" == $'\n' ]]; then
-        return 0                # Enter was hit
-    else
-        echo                    # insert newline
-    fi
-
-    return $ret
-}
-
-update-zsh-config() {
-    $ZDOTDIR/tools/update-zsh-config.sh "$@"
-}
-
-auto-update-enabled() {
-    return ${+DISABLE_AUTO_UPDATE}
-}
-
-time-to-update() {
-    local update_interval=$(( $UPDATE_INTERVAL_DAYS * 24 * 60 * 60 ))
-    local current_time=$(date +%s)
-    local last_update_time=$(stat -c %Z $ZSH_CACHE_DIR/last-update)
-
-    return $(( ($current_time - $last_update_time) < $update_interval ))
-}
+for file in $ZDOTDIR/lib/*.zsh; do
+    source $file
+done
