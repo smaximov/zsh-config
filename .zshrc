@@ -25,6 +25,9 @@ alias -g L='| less'
 alias -g X='| xclip -i'
 alias -g G='| grep -P'
 
+# update every 7 days by default
+UPDATE_INTERVAL_DAYS=7
+
 # Custom enviroment variables
 [[ -f $ZDOTDIR/custom.env ]] && source $ZDOTDIR/custom.env
 
@@ -50,8 +53,7 @@ auto-update-enabled() {
 }
 
 time-to-update() {
-    # update every 7 days by default
-    local update_interval=$(( ${UPDATE_INTERVAL_DAYS:-7} * 24 * 60 * 60 ))
+    local update_interval=$(( $UPDATE_INTERVAL_DAYS * 24 * 60 * 60 ))
     local current_time=$(date +%s)
     local last_update_time=$(stat -c %Z $ZSH_CACHE_DIR/last-update)
 

@@ -38,7 +38,7 @@ update-zsh-config() {
         touch $ZSH_CACHE_DIR/last-update
     fi
 
-    if (( "$1" == 1 )); then
+    if (( $1 == 1 )); then
         [[ -w "$ZSH" ]] || \
             die "The user doesn't have write permissions for the Oh-My-ZSH directory"
 
