@@ -25,6 +25,9 @@ alias -g L='| less'
 alias -g X='| xclip -i'
 alias -g G='| grep -P'
 
+# Custom enviroment variables
+[[ -f $ZDOTDIR/custom.env ]] && source $ZDOTDIR/custom.env
+
 yes-or-no() {
     read -q "reply?${1} [Y/n] "
     ret=$?
