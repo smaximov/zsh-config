@@ -69,10 +69,14 @@ main() {
     # set update marker
     touch $ZSH_CACHE_DIR/last-update
 
-    echo
+    ZSHENV="$(readlink -sm "$ZDOTDIR/.zshenv")"
 
-    info "Creating symlink from '$HOME/.zshenv' to '$ZDOTDIR/.zshenv'..."
-    ensure ln -fs $(readlink -e "$ZDOTDIR/.zshenv") "$HOME/.zshenv"
+    if not_linked "$HOME/.zshenv" "$ZSHENV"; then
+        echo
+
+        info "Creating symlink from '$HOME/.zshenv' to '$ZDOTDIR/.zshenv'..."
+        ensure ln -fs "$ZSHENV" "$HOME/.zshenv"
+    fi
 
     if [ "$(shell)" != "zsh" ]; then
         echo
@@ -85,6 +89,10 @@ main() {
 
     success "ZSH config is successefully installed!"
     success "Type 'env zsh' to login to ZSH immediately"
+}
+
+not_linked() {
+    [ "$(readlink -sm "$1")" != "$2" ]
 }
 
 shell() {
