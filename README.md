@@ -43,6 +43,24 @@ Finally, you can change your shell:
 $ sudo chsh -s /usr/bin/zsh $USER
 ```
 
+## Custom environment variables
+
+To set custom (i.e., user- or machine-specific) environment variables or
+to override the defaults, use the file `$ZDOTDIR/custom.env`.
+
+The following variables can be used to customize this configuration:
+
+| Variable | Default value | Description |
+|----------|---------|-------------|
+| `UPDATE_INTERVAL_DAYS` | `7` | How often (in days) to check for updates? |
+| `DISABLE_AUTO_UPDATE` | _unset_ | Set this variable to some value to disable auto updating |
+
 ## Updating
 
-To update the configuration, run `update-zsh-config`.
+ZSH will attempt to update the configuration after login every
+`$UPDATE_INTERVAL_DAYS` days (7 by default).
+You can override this variable in `$ZDOTDIR/custom.env`.
+Alternatively, you can disable auto-updating entirely by
+setting the `DISABLE_AUTO_UPDATE` variable (e.g., `DISABLE_AUTO_UPDATE=yes`).
+
+To update the configuration manually, run `update-zsh-config`.
