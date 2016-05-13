@@ -1,15 +1,18 @@
-ssh_connection() {
-  if [[ -n $(who am i) ]]; then
-    echo "%{$fg_bold[magenta]%}(ssh)%{$fg_no_bold[magenta]%} "
+_ssh_conn() {
+if [[ -n $(who am i) ]]; then
+    echo "%B%F{magenta}(ssh)%f%b "
   fi
 }
 
-local user='%(!.%{$fg_bold[yellow]%}.%{$fg[yellow]%})%n%{$fg_no_bold[yellow]%}'
-local host='%{$fg[yellow]%}%m'
-local dir='%{$fg[green]%}%c'
-local location="$user%{$fg[cyan]%}@$host $dir"
+_loc() {
+    ##########################################################################################################
+    #                                      username               hostname    directory                      #
+    #                                          |                      |           |                          #
+    #                                          V                      V           V                          #
+    echo '%{%F{yellow}%}λ %(!.%B.%b)%F{yellow}%n%b%F{cyan}@%F{yellow}%m %F{green}%c %(?.%F{yellow}.%F{red})→ '
+}
 
-PROMPT="$(ssh_connection)%{$fg[yellow]%}λ $location %{$fg[yellow]%}→ $(git_prompt_info)%{$reset_color%}"
+PROMPT='$(_ssh_conn)$(_loc)$(git_prompt_info)%{$reset_color%}'
 
-ZSH_THEME_GIT_PROMPT_PREFIX="λ %{$fg[blue]%}git %{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[yellow]%} → %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%F{yellow}λ %B%F{blue}git %F{red}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%b%F{yellow} → %f"
