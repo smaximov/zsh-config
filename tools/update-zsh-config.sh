@@ -23,11 +23,18 @@ ensure() {
 }
 
 update-zsh-config() {
+    echo "Running ZSH config update..."
+
     [[ -w "$ZDOTDIR" ]] || \
         die "The user doesn't have write permissions for the ZSH config directory"
 
     ensure cd $ZDOTDIR
     ensure git pull origin master
+
+    if [[ -w "$ZSH_CACHE_DIR" ]]; then
+        touch $ZSH_CACHE_DIR/last-update
+    fi
+
     if [[ "$1" = 1 ]]; then
         [[ -w "$ZSH" ]] || \
             die "The user doesn't have write permissions for the Oh-My-ZSH directory"
