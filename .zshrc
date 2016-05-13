@@ -26,5 +26,5 @@ alias -g X='| xclip -i'
 alias -g G='| grep -P'
 
 update-zsh-config() {
-    env ZSH=$ZSH ZDOTDIR=$ZDOTDIR $ZDOTDIR/tools/update-zsh-config.sh "$@"
+    $ZDOTDIR/tools/update-zsh-config.sh "$@"
 }
