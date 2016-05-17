@@ -1,5 +1,9 @@
+_is_ssh() {
+    [[ "$(who am i)" =~ '\(([0-9]+\.?){4}\)$' ]]
+}
+
 _ssh_conn() {
-if [[ -n $(who am i) ]]; then
+if _is_ssh; then
     echo "%B%F{magenta}(ssh)%f%b "
   fi
 }
