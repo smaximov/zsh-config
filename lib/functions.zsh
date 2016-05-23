@@ -30,8 +30,8 @@ time-to-update() {
 
 check-for-update() {
     local zsh="$fg[cyan]ZSH config${reset_color}"
-    local scheduled="$zsh: last update was more than ${UPDATE_INTERVAL_DAYS} days ago; update now?"
-    local first_time="$zsh: the date of the last update is unknown; update now?"
+    local scheduled="$zsh: last update was more than ${UPDATE_INTERVAL_DAYS} days ago; check for updates?"
+    local first_time="$zsh: the date of the last update is unknown; check for updates?"
 
     if [[ -f $ZSH_CACHE_DIR/last-update ]]; then
         if time-to-update && yes-no $scheduled; then
