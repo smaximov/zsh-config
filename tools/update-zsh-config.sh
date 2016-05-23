@@ -60,6 +60,7 @@ update-zsh-config() {
             return 0
         fi
 
+        cd ~
         exec -l zsh
     fi
 }
