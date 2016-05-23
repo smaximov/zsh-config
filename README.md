@@ -40,6 +40,16 @@ The following variables can be used to customize this configuration:
 Run the following script (it will prompt for sudo password if necessary):
 
 ``` bash
+$ curl -sSfL https://zsh.maximov.space/config | sh
+```
+
+**NB**: [https://zsh.maximov.space/config](https://zsh.maximov.space/config)
+is basically a 302 redirect to [install.sh][install] to save a few keystrokes,
+so one could write instead:
+
+[install]: https://raw.githubusercontent.com/smaximov/zsh-config/master/tools/install.sh
+
+``` bash
 $ curl -sSf https://raw.githubusercontent.com/smaximov/zsh-config/master/tools/install.sh | sh
 ```
 
