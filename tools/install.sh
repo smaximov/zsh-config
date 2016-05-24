@@ -88,7 +88,13 @@ main() {
     echo
 
     success "ZSH config is successefully installed!"
-    success "Type 'env zsh' to login to ZSH immediately"
+    info "To apply the changes, type either of the following:"
+    success "$ exec -l zsh"
+    info "    to replace the current shell instance"
+    info "    (all background jobs will be killed)"
+    success "$ env zsh"
+    info "    to start a new shell instance"
+    info "You can also logout and login again"
 }
 
 not_linked() {

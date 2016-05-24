@@ -53,23 +53,19 @@ update-zsh-config() {
         ensure env ZSH=$ZSH /bin/sh $ZSH/tools/upgrade.sh
     fi
 
-    if (( $2 == 0 )); then
-        info "Respawning zsh..."
-        if [[ -n "$(jobs)" ]] && ! yes-no "You have background jobs running. Proceed?"; then
-            warn "Aborted"
-            return 0
-        fi
-
-        cd ~
-        exec -l zsh
-    fi
+    info "To apply the changes, type either of the following:"
+    success "$ exec -l zsh"
+    info "    to replace the current shell instance"
+    info "    (all background jobs will be killed)"
+    success "$ env zsh"
+    info "    to start a new shell instance"
+    info "You can also logout and login again"
 }
 
 main() {
     autoload -Uz colors && colors
 
     local update_omz=0
-    local norespawn=0
 
     while (( $# > 0 )); do
         case $1 in
@@ -80,9 +76,6 @@ main() {
             (-o|--oh-my-zsh)
                 update_omz=1
                 ;;
-            (--no-respawn)
-                norespawn=1
-                ;;
             (*)
                 die "Unknown option: $1"
                 ;;
@@ -90,7 +83,7 @@ main() {
         shift
     done
 
-    update-zsh-config $update_omz $norespawn
+    update-zsh-config $update_omz
 }
 
 main "$@" || exit 0
