@@ -9,8 +9,6 @@ export EDITOR='emacsclient -t'
 export PAGER='less -M'
 export VISUAL=$EDITOR
 
-export LC_ALL="ru_RU.UTF-8"
-
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
