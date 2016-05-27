@@ -11,6 +11,7 @@ alias bower="noglob bower"
 alias apt-get='noglob apt-get'
 alias aptitude='noglob aptitude'
 alias yum='noglob yum'
+alias dnf='noglob dnf'
 
 # Global aliases
 alias -g L='| less'
