@@ -4,6 +4,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
 
+unset ALTERNATE_EDITOR
 export EDITOR='emacsclient -t'
 export PAGER='less -M'
 export VISUAL=$EDITOR
