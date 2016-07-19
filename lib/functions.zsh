@@ -41,3 +41,7 @@ check-for-update() {
         update-zsh-config
     fi
 }
+
+with-path() {
+    env PATH="$1:${PATH}" "${@:2}"
+}
