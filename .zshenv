@@ -40,7 +40,7 @@ export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
 export HISTFILE=$ZSH_CACHE_DIR/zhistory
 
 # StarDict dictionaries location
-STARDICT_DATA_DIR=$HOME/.local/share/stardict/dic
+export STARDICT_DATA_DIR=$HOME/.local/share/stardict/dic
 
 # Store ZSH files under XDG_CONFIG_HOME base directory.
 # This works by symlinking ~/.zshenv to ~/.config/zsh/.zshenv (this file).
