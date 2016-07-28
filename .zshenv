@@ -42,6 +42,9 @@ export HISTFILE=$ZSH_CACHE_DIR/zhistory
 # StarDict dictionaries location
 export STARDICT_DATA_DIR=$HOME/.local/share/stardict/dic
 
+# Some SDL games don't handle multiple display correctly in fullscreen
+export SDL_VIDEO_FULLSCREEN_DISPLAY=0
+
 # Store ZSH files under XDG_CONFIG_HOME base directory.
 # This works by symlinking ~/.zshenv to ~/.config/zsh/.zshenv (this file).
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
