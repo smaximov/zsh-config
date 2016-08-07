@@ -1,15 +1,60 @@
+# Usage: yes-no [-y|-n] prompt...
+# Options
+#     -y    assume `yes' as the default answer [default]
+#     -n    assume `no` as the default anwwer
 yes-no() {
-    local yn="$fg[green]Y${reset_color}/n"
-    read -q "reply?$1 ${yn} "
-    local ret=$?
+    local hint reply default opt
+    default=y
 
-    if [[ "$reply" == $'\n' ]]; then
-        return 0                # Enter was hit
+    while getopts :yn opt; do
+        case $opt in
+            (y)
+                default=y
+                ;;
+            (n)
+                default=n
+                ;;
+            (\?)
+                echo "Unknown option: -${OPTARG}"
+                ;;
+        esac
+    done
+
+    if [[ $default == y ]]; then
+        hint="$fg[green]Y${reset_color}/n"
     else
-        echo                    # insert newline
+        hint="y/$fg[green]N${reset_color}"
     fi
 
-    return $ret
+    (( OPTIND > 1 )) && shift $(( OPTIND - 1 ))
+
+    read -k 1 "reply?$* [${hint}] "
+
+    case $reply in
+        (y|Y|n|N)
+            echo
+            ;;
+        ($'\n')
+            reply=$default
+            ;;
+        (*)
+            echo
+            reply=$default
+            ;;
+    esac
+
+    case $reply in
+        y|Y)
+            return 0
+            ;;
+        n|N)
+            return 1
+            ;;
+        *)
+            # unreachable
+            exit 1
+            ;;
+    esac
 }
 
 update-zsh-config() {
