@@ -7,4 +7,4 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # https://github.com/nvbn/thefuck
-[[ $+commands[thefuck] ]] && eval "$(thefuck --alias)"
+(( $+commands[thefuck] )) && eval "$(thefuck --alias)"
