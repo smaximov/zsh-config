@@ -27,7 +27,7 @@ export RUST_NEW_ERROR_FORMAT=true
 export RUST_SRC_PATH=$HOME/src/rust/src
 
 # Node
-path+=($HOME/node/bin)
+path+=($XDG_CACHE_HOME/npm/bin)
 
 # $HOME, sweet $HOME
 export PATH
