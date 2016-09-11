@@ -30,8 +30,6 @@ export RUST_SRC_PATH=$HOME/src/rust/src
 path+=($HOME/node/bin)
 
 # $HOME, sweet $HOME
-path+=($HOME/bin)
-
 export PATH
 
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
