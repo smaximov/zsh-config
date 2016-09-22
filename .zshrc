@@ -20,6 +20,9 @@ plugins=(git extract ruby rails cake bundler coffee npm pip scala)
 
 source $ZSH/oh-my-zsh.sh
 
+# Disable fancy prompts on dumb terminals
+[ $TERM = "dumb" ] && unsetopt zle && PS1="$ "
+
 for file in $ZDOTDIR/lib/*.zsh; do
     source $file
 done
