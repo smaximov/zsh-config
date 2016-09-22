@@ -18,10 +18,14 @@ plugins=(git extract ruby rails cake bundler coffee npm pip scala)
 # Custom enviroment variables
 [[ -f $ZDOTDIR/custom.env ]] && source $ZDOTDIR/custom.env
 
-source $ZSH/oh-my-zsh.sh
+# Disable fancy colored shell prompts and auto-update on dumb terminals
+if [ $TERM = "dumb" ]; then
+   unsetopt zle
+   PS1="$ "
+   DISABLE_AUTO_UPDATE=true
+fi
 
-# Disable fancy prompts on dumb terminals
-[ $TERM = "dumb" ] && unsetopt zle && PS1="$ "
+source $ZSH/oh-my-zsh.sh
 
 for file in $ZDOTDIR/lib/*.zsh; do
     source $file
