@@ -10,7 +10,7 @@ ZSH_THEME="nameless"
 UPDATE_INTERVAL_DAYS=7
 
 # Plugins
-plugins=(git extract ruby rails cake bundler coffee npm pip scala)
+plugins=(git extract ruby cake bundler coffee npm pip scala)
 
 # Create ZSH cache directory unless it already exists
 [[ -d $ZSH_CACHE_DIR ]] || mkdir -p $ZSH_CACHE_DIR
