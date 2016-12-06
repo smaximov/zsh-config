@@ -16,7 +16,7 @@ plugins=(git extract ruby cake bundler coffee npm pip scala)
 [[ -d $ZSH_CACHE_DIR ]] || mkdir -p $ZSH_CACHE_DIR
 
 # Custom enviroment variables
-[[ -f $ZDOTDIR/custom.env ]] && source $ZDOTDIR/custom.env
+[[ -f $ZDOTDIR/custom.zshrc ]] && source $ZDOTDIR/custom.zshrc
 
 # Disable fancy colored shell prompts and auto-update on dumb terminals
 if [ $TERM = "dumb" ]; then

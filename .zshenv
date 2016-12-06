@@ -29,6 +29,9 @@ export RUST_SRC_PATH=$HOME/src/rust/src
 # Node
 path+=($XDG_CACHE_HOME/npm/bin)
 
+# Custom enviroment variables
+[[ -f $ZDOTDIR/custom.zshenv ]] && source $ZDOTDIR/custom.zshenv
+
 # $HOME, sweet $HOME
 export PATH
 
