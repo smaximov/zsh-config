@@ -11,6 +11,7 @@ alias apt-get='noglob apt-get'
 alias aptitude='noglob aptitude'
 alias yum='noglob yum'
 alias dnf='noglob dnf'
+alias rake='noglob rake'
 
 # Global aliases
 alias -g L='| less'
