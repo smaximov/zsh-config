@@ -50,3 +50,5 @@ export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 # Custom enviroment variables
 [[ -f $ZDOTDIR/custom.zshenv ]] && source $ZDOTDIR/custom.zshenv
 
+# Completions
+fpath+=($ZDOTDIR/completions)
