@@ -23,9 +23,6 @@ path+=($CARGO_HOME/bin)
 # New fancy error output format for rust-nightly
 export RUST_NEW_ERROR_FORMAT=true
 
-# Rust sources for Racer
-export RUST_SRC_PATH=$HOME/src/rust/src
-
 # Node
 path+=($XDG_CACHE_HOME/npm/bin)
 
