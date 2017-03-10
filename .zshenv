@@ -29,9 +29,6 @@ export RUST_SRC_PATH=$HOME/src/rust/src
 # Node
 path+=($XDG_CACHE_HOME/npm/bin)
 
-# Custom enviroment variables
-[[ -f $ZDOTDIR/custom.zshenv ]] && source $ZDOTDIR/custom.zshenv
-
 # $HOME, sweet $HOME
 export PATH
 
@@ -49,3 +46,7 @@ export SDL_VIDEO_FULLSCREEN_DISPLAY=0
 # Store ZSH files under XDG_CONFIG_HOME base directory.
 # This works by symlinking ~/.zshenv to ~/.config/zsh/.zshenv (this file).
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+
+# Custom enviroment variables
+[[ -f $ZDOTDIR/custom.zshenv ]] && source $ZDOTDIR/custom.zshenv
+
