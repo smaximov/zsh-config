@@ -26,6 +26,9 @@ export RUST_NEW_ERROR_FORMAT=true
 # Node
 path+=($XDG_CACHE_HOME/npm/bin)
 
+# Yarn
+(( $+commands[yarn] )) && path+=$(yarn global bin)
+
 # $HOME, sweet $HOME
 export PATH
 
