@@ -12,6 +12,9 @@ UPDATE_INTERVAL_DAYS=7
 # Plugins
 plugins=(git extract ruby cake bundler coffee npm pip scala)
 
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
 # Create ZSH cache directory unless it already exists
 [[ -d $ZSH_CACHE_DIR ]] || mkdir -p $ZSH_CACHE_DIR
 
