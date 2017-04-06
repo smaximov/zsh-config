@@ -68,9 +68,22 @@ auto-update-enabled() {
 time-to-update() {
     local update_interval=$(( $UPDATE_INTERVAL_DAYS * 24 * 60 * 60 ))
     local current_time=$(date +%s)
-    local last_update_time=$(stat -c %Z $ZSH_CACHE_DIR/last-update)
 
-    return $(( ($current_time - $last_update_time) < $update_interval ))
+    return $(( ($current_time - $(last-update-time)) < $update_interval ))
+}
+
+last-update-time() {
+    local key format
+
+    if [[ $(uname) == 'Darwin' ]]; then
+        key=-f
+        format=%m
+    else
+        key=-c
+        format=%Z
+    fi
+
+    stat $key $format $ZSH_CACHE_DIR/last-update
 }
 
 check-for-update() {
