@@ -24,15 +24,14 @@ path+=($CARGO_HOME/bin)
 export RUST_NEW_ERROR_FORMAT=true
 
 # Node
-path+=($XDG_CACHE_HOME/npm/bin)
+NVM_DIR=$XDG_CACHE_HOME/nvm
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
 
 # Yarn
 (( $+commands[yarn] )) && path+=$(yarn global bin)
 
 # $HOME, sweet $HOME
 export PATH
-
-export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
 
 export ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
 export HISTFILE=$ZSH_CACHE_DIR/zhistory
