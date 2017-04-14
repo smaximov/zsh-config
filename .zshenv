@@ -28,6 +28,7 @@ NVM_DIR=$XDG_CACHE_HOME/nvm
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
 
 # Yarn
+path+=($HOME/.yarn/bin)
 (( $+commands[yarn] )) && path+=$(yarn global bin)
 
 # $HOME, sweet $HOME
