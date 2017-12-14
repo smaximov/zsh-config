@@ -55,3 +55,6 @@ export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 
 # Completions
 fpath+=($ZDOTDIR/completions)
+
+# Enable Erlang/Elixir REPL history
+export ERL_AFLAGS="-kernel shell_history enabled"
