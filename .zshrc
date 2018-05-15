@@ -28,5 +28,14 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 for file in $ZDOTDIR/lib/*.zsh; do
-    source $file
+    source "$file"
+done
+
+# Include machine-specific and private configuration
+
+# NOTE(smaximov):
+#   (.N) specifies glog qualifiers; "." (dot) stands for regular files, "N" (NULL_GLOB)
+#   makes Zsh not complain if the glob doesn't match anything.
+for file in $ZDOTDIR/local/*.zsh(.N); do
+    source "$file"
 done

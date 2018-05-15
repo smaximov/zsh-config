@@ -35,6 +35,16 @@ The following variables can be used to customize this configuration:
 
 [themes]: https://github.com/robbyrussell/oh-my-zsh/tree/master/themes/
 
+## Custom configuration
+
+Place your custom `*.zsh` files in `local`, they won't be commited to version control.
+
+For example, add your private aliases to `local/aliases.zsh`:
+
+``` zsh
+alias psql-prod="ssh secret.host.com -t 'psql secret-user secret-db --password --host secret.postgres.database.host.com'"
+```
+
 # Installation
 
 Run the following script (it will prompt for sudo password if necessary):
