@@ -32,7 +32,7 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
 
 # Yarn
 path+=($HOME/.yarn/bin)
-(( $+commands[yarn] )) && path+=$(yarn global bin)
+(( $+commands[yarn] )) && path+=$(yarn global bin 2>/dev/null)
 
 # $HOME, sweet $HOME
 export PATH
