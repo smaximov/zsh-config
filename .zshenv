@@ -34,6 +34,9 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
 path+=($HOME/.yarn/bin)
 (( $+commands[yarn] )) && path+=$(yarn global bin 2>/dev/null)
 
+# Google Cloud SDK
+path+=($HOME/.local/share/google-cloud-sdk/bin)
+
 # $HOME, sweet $HOME
 export PATH
 
