@@ -27,7 +27,7 @@ path+=($CARGO_HOME/bin)
 export RUST_NEW_ERROR_FORMAT=true
 
 # Node
-NVM_DIR=$XDG_CACHE_HOME/nvm
+export NVM_DIR=$XDG_CACHE_HOME/nvm
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
 
 # Yarn
