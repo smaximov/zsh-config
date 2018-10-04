@@ -39,3 +39,8 @@ done
 for file in $ZDOTDIR/local/*.zsh(.N); do
     source "$file"
 done
+
+# Nix setup
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
