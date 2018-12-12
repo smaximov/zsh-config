@@ -19,3 +19,8 @@ if [[ $GDMSESSION == 'awesome' ]] ; then
 fi
 
 (( $+commands[direnv] )) && eval "$(direnv hook zsh)"
+
+# Nix setup
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
