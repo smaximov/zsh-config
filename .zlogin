@@ -17,3 +17,5 @@ if [[ $GDMSESSION == 'awesome' ]] ; then
     eval "$(gnome-keyring-daemon --start)"
     export SSH_AUTH_SOCK
 fi
+
+(( $+commands[direnv] )) && eval "$(direnv hook zsh)"
