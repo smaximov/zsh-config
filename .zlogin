@@ -19,3 +19,5 @@ if [[ $GDMSESSION == 'awesome' ]] ; then
 fi
 
 (( $+commands[direnv] )) && eval "$(direnv hook zsh)"
+
+[[ -s "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" ]] && source "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
