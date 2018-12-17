@@ -39,3 +39,7 @@ done
 for file in $ZDOTDIR/local/*.zsh(.N); do
     source "$file"
 done
+
+# Since /etc/zshrc is read after $ZDOTDIR/.zshenv, the NIX_PATH setting defined in the former override settings
+# defined in the latter, so we customize NIX_PATH here instead.
+[[ -d "$HOME/.nix-defexpr/channels" ]] && export NIX_PATH="$HOME/.nix-defexpr/channels${NIX_PATH:+:$NIX_PATH}"
