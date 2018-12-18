@@ -28,7 +28,6 @@ export RUST_NEW_ERROR_FORMAT=true
 
 # Node
 export NVM_DIR=$XDG_CACHE_HOME/nvm
-export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/config
 
 # Yarn
 path+=($HOME/.yarn/bin)
